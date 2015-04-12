@@ -1,7 +1,8 @@
 
 package br.com.emprestimodb.controller;
 
-import br.com.emprestimodb.entity.Material;
+import br.com.emprestimodb.dao.entity.Material;
+import br.com.emprestimodb.model.MaterialModel;
 import br.com.emprestimodb.service.MaterialService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,7 @@ public class MaterialController {
     }      
     
     @RequestMapping(value = "/materiais/novo", method = RequestMethod.POST)
-    public void add(Material material){
-        System.out.println(material.toString());
+    public void add(MaterialModel material){
         materialService.save(material);
     }
     

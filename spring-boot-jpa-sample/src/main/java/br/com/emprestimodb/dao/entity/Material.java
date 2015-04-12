@@ -1,5 +1,5 @@
 
-package br.com.emprestimodb.entity;
+package br.com.emprestimodb.dao.entity;
 
 import java.sql.Date;
 import javax.persistence.Column;
