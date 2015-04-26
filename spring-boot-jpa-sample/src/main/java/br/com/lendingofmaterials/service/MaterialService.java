@@ -1,8 +1,8 @@
 
-package br.com.emprestimodb.service;
+package br.com.lendingofmaterials.service;
 
-import br.com.emprestimodb.contract.MaterialContract;
-import br.com.emprestimodb.dao.facade.MaterialFacade;
+import br.com.lendingofmaterials.contract.MaterialContract;
+import br.com.lendingofmaterials.dao.facade.MaterialFacade;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

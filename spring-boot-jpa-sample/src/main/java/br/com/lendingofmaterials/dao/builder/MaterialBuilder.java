@@ -1,7 +1,7 @@
 
-package br.com.emprestimodb.dao.builder;
+package br.com.lendingofmaterials.dao.builder;
 
-import br.com.emprestimodb.dao.entity.Material;
+import br.com.lendingofmaterials.dao.entity.Material;
 import java.sql.Date;
 
 public class MaterialBuilder {

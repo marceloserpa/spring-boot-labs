@@ -1,5 +1,5 @@
 
-package br.com.emprestimodb.contract;
+package br.com.lendingofmaterials.contract;
 
 import java.sql.Date;
 

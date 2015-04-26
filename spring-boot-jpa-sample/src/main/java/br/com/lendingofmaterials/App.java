@@ -1,5 +1,5 @@
 
-package br.com.emprestimodb;
+package br.com.lendingofmaterials;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

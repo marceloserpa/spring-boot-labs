@@ -1,9 +1,9 @@
 
-package br.com.emprestimodb.dao.converter;
+package br.com.lendingofmaterials.dao.converter;
 
-import br.com.emprestimodb.dao.builder.MaterialBuilder;
-import br.com.emprestimodb.dao.entity.Material;
-import br.com.emprestimodb.contract.MaterialContract;
+import br.com.lendingofmaterials.dao.builder.MaterialBuilder;
+import br.com.lendingofmaterials.dao.entity.Material;
+import br.com.lendingofmaterials.contract.MaterialContract;
 
 public class MaterialConverter {
 

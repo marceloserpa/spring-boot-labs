@@ -1,7 +1,7 @@
 
-package br.com.emprestimodb.dao.persistence;
+package br.com.lendingofmaterials.dao.persistence;
 
-import br.com.emprestimodb.dao.entity.Material;
+import br.com.lendingofmaterials.dao.entity.Material;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;

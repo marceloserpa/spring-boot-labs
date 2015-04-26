@@ -1,9 +1,9 @@
 
-package br.com.emprestimodb.dao.facade;
+package br.com.lendingofmaterials.dao.facade;
 
-import br.com.emprestimodb.dao.converter.MaterialConverter;
-import br.com.emprestimodb.dao.persistence.MaterialJpaPersistence;
-import br.com.emprestimodb.contract.MaterialContract;
+import br.com.lendingofmaterials.dao.converter.MaterialConverter;
+import br.com.lendingofmaterials.dao.persistence.MaterialJpaPersistence;
+import br.com.lendingofmaterials.contract.MaterialContract;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
