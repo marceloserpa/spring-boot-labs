@@ -19,7 +19,7 @@ public class MaterialJpaPersistence {
         return entityManager.createQuery("select m from Material m").getResultList();
     }
     
-    public Optional<Material> get(Long id){
+    public Optional<Material> findById(Long id){
         Material material = entityManager.find(Material.class, id);
         return material == null ? Optional.empty() : Optional.of(material);
     }
@@ -31,7 +31,7 @@ public class MaterialJpaPersistence {
     
     @Transactional
     public void delete(Long id){
-        Optional optionalMaterial = get(id);
+        Optional optionalMaterial = findById(id);
         if(optionalMaterial.isPresent()) entityManager.remove(optionalMaterial.get());
         
     }

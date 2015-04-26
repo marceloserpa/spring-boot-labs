@@ -1,8 +1,7 @@
 
 package br.com.emprestimodb.controller;
 
-import br.com.emprestimodb.dao.entity.Material;
-import br.com.emprestimodb.model.MaterialModel;
+import br.com.emprestimodb.contract.MaterialContract;
 import br.com.emprestimodb.service.MaterialService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +17,12 @@ public class MaterialController {
     MaterialService materialService;
     
     @RequestMapping(value="/materiais",method=RequestMethod.GET)
-    public List<Material> getAll(){
+    public List<MaterialContract> getAll(){
         return materialService.findAll();
     }
     
     @RequestMapping(value="/materiais/{id}",method=RequestMethod.GET)
-    public Material getOne(@PathVariable Long id){
+    public MaterialContract getOne(@PathVariable Long id){
         return materialService.findById(id).get();
     } 
     
@@ -33,7 +32,7 @@ public class MaterialController {
     }      
     
     @RequestMapping(value = "/materiais/novo", method = RequestMethod.POST)
-    public void add(MaterialModel material){
+    public void add(MaterialContract material){
         materialService.save(material);
     }
     

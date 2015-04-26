@@ -1,9 +1,9 @@
 
-package br.com.emprestimodb.model;
+package br.com.emprestimodb.contract;
 
 import java.sql.Date;
 
-public class MaterialModel {
+public class MaterialContract {
     
     private Long id;    
     private String nome;    
