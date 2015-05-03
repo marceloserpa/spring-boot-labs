@@ -7,9 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import lombok.Data;
 
 @Entity
-public class Material {
+public @Data class Material {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,42 +22,5 @@ public class Material {
     
     @Column(name = "data_compra")
     private Date dataCompra;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Integer getEstoque() {
-        return estoque;
-    }
-
-    public void setEstoque(Integer estoque) {
-        this.estoque = estoque;
-    }
-
-    public Date getDataCompra() {
-        return dataCompra;
-    }
-
-    public void setDataCompra(Date dataCompra) {
-        this.dataCompra = dataCompra;
-    }
-
-    @Override
-    public String toString() {
-        return "Material{" + "id=" + id + ", nome=" + nome + ", estoque=" + estoque + ", dataCompra=" + dataCompra + '}';
-    }        
-        
+              
 }
