@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MaterialController {
     
     @Autowired 
-    MaterialService materialService;
+    private MaterialService materialService;
     
     @RequestMapping(value="/materiais",method=RequestMethod.GET)
     public List<MaterialContract> getAll(){
