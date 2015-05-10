@@ -1,0 +1,19 @@
+## YAML Template.
+
+spring:
+    application.name: word
+    profiles.active: development
+    main:
+        web-enviroment: true
+        
+---
+
+spring:
+    profiles: development
+    
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost/emprestimodb
+        username: root
+        password: 123
+        
