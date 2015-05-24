@@ -1,8 +1,8 @@
 
-package br.com.lendingofmaterials.controller;
+package br.com.lendingofmaterials.http.controller;
 
 import br.com.lendingofmaterials.contract.MaterialContract;
-import br.com.lendingofmaterials.service.MaterialService;
+import br.com.lendingofmaterials.http.service.MaterialService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,5 +1,5 @@
 
-package br.com.lendingofmaterials.service;
+package br.com.lendingofmaterials.http.service;
 
 import br.com.lendingofmaterials.contract.MaterialContract;
 import br.com.lendingofmaterials.dao.facade.MaterialFacade;
