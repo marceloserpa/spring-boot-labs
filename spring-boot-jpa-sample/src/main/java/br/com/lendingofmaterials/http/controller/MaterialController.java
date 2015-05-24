@@ -11,27 +11,28 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/materiais")
 public class MaterialController {
     
     @Autowired 
     private MaterialService materialService;
     
-    @RequestMapping(value="/materiais",method=RequestMethod.GET)
+    @RequestMapping(method=RequestMethod.GET)
     public List<MaterialContract> getAll(){
         return materialService.findAll();
     }
     
-    @RequestMapping(value="/materiais/{id}",method=RequestMethod.GET)
+    @RequestMapping(value="/{id}",method=RequestMethod.GET)
     public MaterialContract getOne(@PathVariable Long id){
         return materialService.findById(id).get();
     } 
     
-    @RequestMapping(value="/materiais/{id}",method=RequestMethod.DELETE)
+    @RequestMapping(value="/{id}",method=RequestMethod.DELETE)
     public void remove(@PathVariable Long id){
         materialService.delete(id);
     }      
     
-    @RequestMapping(value = "/materiais/novo", method = RequestMethod.POST)
+    @RequestMapping(value = "/novo", method = RequestMethod.POST)
     public void add(MaterialContract material){
         materialService.save(material);
     }
