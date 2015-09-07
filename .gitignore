@@ -1,1 +1,3 @@
 /spring-boot-jpa-sample/target/
+/spring-websockets-chat/target/
+.DS_Store

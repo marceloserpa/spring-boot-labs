@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello WebSocket</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="sockjs-0.3.4.js"></script>
+        <script src="stomp.js"></script>
+        <script type="text/javascript">
+            var stompClient = null;
+
+            function setConnected(connected) {
+                document.getElementById('connect').disabled = connected;
+                document.getElementById('disconnect').disabled = !connected;
+                document.getElementById('chat-component').style.visibility = connected ? 'visible' : 'hidden';               
+            }
+
+            function connect() {
+                var socket = new SockJS('/sendMessage');
+                stompClient = Stomp.over(socket);
+                stompClient.connect({}, function (frame) {
+                    setConnected(true);
+                    console.log('Connected: ' + frame);
+                    stompClient.subscribe('/topic/messages', function (message) {
+                        console.log(message);
+                        $('#chat-message-list').append('<div id="chat-message-list-item">' + JSON.parse(message.body).text + '</div>')
+                    });
+                });
+            }
+
+            function disconnect() {
+                if (stompClient != null)
+                    stompClient.disconnect();
+                setConnected(false);
+                console.log("Disconnected");
+            }
+
+            $(function () {
+                
+                disconnect();
+                
+                $('#connect').click(function(element){
+                    element.preventDefault();
+                    connect();
+                });
+                
+                $('#disconnect').click(function(element){
+                    element.preventDefault();
+                    disconnect();
+                });
+                
+                $('#chat-message-send-btn').click(function (element) {
+                    element.preventDefault();
+                    stompClient.send("/app/sendMessage", {}, JSON.stringify({'text': $('#chat-message-text').val()}));
+                });
+            });
+        </script>
+    </head>
+    <body>        
+        <div>
+            <div>
+                <button id="connect" >Connect</button>
+                <button id="disconnect" disabled="disabled">Disconnect</button>
+            </div>
+            <br /><br />
+            <div id="chat-component">
+                <div id="chat-message-list">
+
+                </div>
+                <div id="chat-message-text-block">
+                    <input type="text" name="chat-message-text" id="chat-message-text" />
+                    <input type="submit" name="chat-message-send-btn" id="chat-message-send-btn" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
