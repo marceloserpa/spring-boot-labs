@@ -1,3 +1,4 @@
 /spring-boot-jpa-sample/target/
 /spring-websockets-chat/target/
 .DS_Store
+/spring-boot-jersey-sample/target/
