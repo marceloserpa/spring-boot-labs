@@ -2,3 +2,8 @@
 /spring-websockets-chat/target/
 .DS_Store
 /spring-boot-jersey-sample/target/
+*.classpath
+*.gradle/
+*.project
+*.settings/ 
+
