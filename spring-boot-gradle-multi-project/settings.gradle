@@ -1,6 +1,4 @@
 rootProject.name = 'com.mserpa.multiproject'
 
 include "app", "impl", "contract"
-include 'contract'
-findProject(':contract')?.name = 'com.mserpa.multiproject.contract'
 
