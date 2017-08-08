@@ -1,0 +1,16 @@
+group 'com.mserpa.multiproject.app'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories { jcenter() }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE")
+    compile project(":com.mserpa.multiproject.contract")
+}

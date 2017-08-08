@@ -1,0 +1,15 @@
+group 'com.mserpa.multiproject.impl'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
