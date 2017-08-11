@@ -1,0 +1,29 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'spring-boot-docker'
+    version =  '0.1.0'
+
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE")
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
