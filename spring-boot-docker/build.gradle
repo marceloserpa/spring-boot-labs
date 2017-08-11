@@ -20,10 +20,13 @@ repositories {
 jar {
     baseName = 'spring-boot-docker'
     version =  '0.1.0'
-
 }
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:1.5.6.RELEASE")
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task pack(type: Exec){
+    commandLine 'sh', 'pack.sh', jar.baseName + '-' + jar.version
 }
